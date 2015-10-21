@@ -1,9 +1,11 @@
-perl prerun_pwas.pl endo.ga.xml endo.sentence.xml > sentence.txt
+perl prerun_pwas.pl endometriosis.ga.xml endometriosis.sentence.xml > sentence_out.txt
 
-perl pwas4.pl sentence.txt BGfile > pwas_out4.txt
-perl postrun_pwas.pl pwas_out4.txt > pwas_out_multiple_test_correction4.txt
-
-perl pwas3.pl sentence.txt BGfile > pwas_out3.txt
+perl pwas3.pl sentence_out.txt BGfile > pwas_out3.txt
 perl postrun_pwas.pl pwas_out3.txt > pwas_out_multiple_test_correction3.txt
+
+rem Or use the sentence_out_curated.txt
+
+perl pwas3.pl sentence_out_curated.txt BGfile > pwas_out_curated3.txt
+perl postrun_pwas.pl pwas_out_curated3.txt > pwas_out_curated_multiple_test_correction3.txt
 
 pause
